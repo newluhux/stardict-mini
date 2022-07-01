@@ -34,20 +34,19 @@ stardict 的终端版本，使用 C 编写
   
 #+END_SRC
 
-** sdm 的使用
+** sdmh 的使用
 
-sdm 是一个脚本，遵循Unix哲学，能脚本实现的功能就不写一大坨C来实现了
+sdmh 是一个脚本，遵循Unix哲学，能脚本实现的功能就不写一大坨C来实现了
 
 #+BEGIN_SRC
-  chmod +x sdm
-  ./sdm hello
-  ./sdm
+  chmod +x sdmh
+  ./sdmh hello
+  ./sdmh
 #+END_SRC
 
 这个脚本现有功能:
 
 1. 会把查询过的单词追加到 $HOME/.sdmini_history 文件中
-
 
 ** 和编辑器的集成
 
