@@ -42,3 +42,7 @@ stardict 的终端版本，使用 C 编写
 ** 为什么写这个工具
 
 最近学到了mmap高级IO，准备把自己编写的startdict程序重写一下
+
+** 视频演示
+
+https://www.bilibili.com/video/BV1fB4y1p7Zi?share_source=copy_web
