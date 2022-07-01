@@ -1,0 +1,44 @@
+* stardict 终端版本
+
+stardict 的终端版本，使用 C 编写
+
+** 编译
+
+#+BEGIN_SRC
+  cc -o sdmini sdmini.c
+#+END_SRC
+
+
+** 使用
+
+#+BEGIN_SRC
+  # 设置数据文件的环境变量，如果不设置默认则使用
+  # /usr/share/stardict/default.idx
+  # /usr/share/stardict/default.ifo
+  # /usr/share/stardict/default.dict
+  
+  export stardict_idx="/path/to/xxx.idx"
+  export stardict_ifo="/path/to/xxx.ifo"
+  export stardict_dict="/path/to/xxx.dict"
+
+  ./sdmini hello world
+
+  # 或者
+
+  echo hello world | ./sdmini
+
+  # 或者
+
+  # 在程序启动后输入一个或多个单词然后回车
+  ./sdmini
+  
+#+END_SRC
+
+
+** 和编辑器的集成
+
+1. 默认肯定是可以与acme编辑器一起用的
+
+** 为什么写这个工具
+
+最近学到了mmap高级IO，准备把自己编写的startdict程序重写一下
