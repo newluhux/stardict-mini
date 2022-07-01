@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+set -u
+
+SDMINI="sdmini"
+SDMINI_HISTORY=$HOME/.sdmini_history
+
+if [ $# -ge 1 ]
+then
+	echo $@ >> $SDMINI_HISTORY
+	$SDMINI $@
+else
+	tee -a $SDMINI_HISTORY | $SDMINI
+fi
+
+

@@ -9,7 +9,7 @@ stardict 的终端版本，使用 C 编写
 #+END_SRC
 
 
-** 使用
+** sdmini 的使用
 
 #+BEGIN_SRC
   # 设置数据文件的环境变量，如果不设置默认则使用
@@ -33,6 +33,20 @@ stardict 的终端版本，使用 C 编写
   ./sdmini
   
 #+END_SRC
+
+** sdm 的使用
+
+sdm 是一个脚本，遵循Unix哲学，能脚本实现的功能就不写一大坨C来实现了
+
+#+BEGIN_SRC
+  chmod +x sdm
+  ./sdm hello
+  ./sdm
+#+END_SRC
+
+这个脚本现有功能:
+
+1. 会把查询过的单词追加到 $HOME/.sdmini_history 文件中
 
 
 ** 和编辑器的集成
