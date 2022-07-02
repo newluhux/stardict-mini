@@ -164,8 +164,8 @@ size_t stardict_index_load(unsigned char *addr,stardict_index *index) {
 	unsigned char *saveptr = addr;
 	char *tempstr;
 
-	index->len = strlen(addr);
-	index->word = addr;
+	index->len = strlen((char *)addr);
+	index->word = (char *)addr;
 	addr += index->len + sizeof(char);
 	index->offset = ntohl(*((uint32_t *)addr));
 	addr += sizeof(uint32_t);
@@ -181,7 +181,7 @@ int stardict_search(stardict *sd,char *word,stardict_index *result) {
 	int len = strnlen(word,WORDLENMAX);
 
 	unsigned char *idxp = sd->file_mmap[STARDICT_FILE_IDX];
-	unsigned char *idxend = (char *)idxp + sd->mmap_size[STARDICT_FILE_IDX];
+	unsigned char *idxend = (unsigned char *)idxp + sd->mmap_size[STARDICT_FILE_IDX];
 	stardict_index index;
 
 	size_t nread;
