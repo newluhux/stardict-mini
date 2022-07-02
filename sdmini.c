@@ -245,7 +245,7 @@ char *getword(FILE *in) {
 	while (((c=fgetc(in)) != EOF) && isspace(c)) // 跳过输入单词前的空白
 		;
 	if (c == EOF)
-		return NULL;
+		exit(EXIT_SUCCESS);
 	ungetc(c,in); // 把读出来的压回输入
 
 	i = 0;
@@ -253,6 +253,8 @@ char *getword(FILE *in) {
 		word[i] = c;
 		i++;
 	}
+	if (c == EOF)
+		exit(EXIT_SUCCESS);
 	word[i] = '\0';
 	if (strnlen(word,WORDLENMAX) <= 0)
 		return NULL;
